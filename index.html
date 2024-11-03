@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Game</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body
+    class="bg-black text-gray-200"
+    style="background-image: url(&quot;/assets/background.jpg&quot;)"
+  >
+    <div class="absolute top-4 right-4">
+      <a href="#leaderboard" class="hover:underline"
+        ><img
+          src="/assets/leaderboard.png"
+          class="w-16 h-16 object-contain rounded-full"
+          alt="leaderboard"
+      /></a>
+    </div>
+
+    <div
+      id="game-over"
+      class="hidden absolute top-0 left-0 w-full h-full bg-black flex flex-col justify-center items-center"
+    >
+      <h1 class="text-5xl font-bold mb-4">Game Over</h1>
+      <p class="text-2xl font-semibold mb-8">
+        Your score was <span id="game-score">0</span>
+      </p>
+      <button
+        id="restart-button"
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Restart
+      </button>
+    </div>
+
+    <div
+      id="hud"
+      class="absolute bottom-4 left-4 bg-black rounded-full p-4 px-8"
+    >
+      <div class="flex gap-4 items-center mb-4">
+        <div class="text-white">
+          <span class="text-sm font-semibold">Score</span>
+          <h1 id="score-value" class="text-3xl font-bold">0</h1>
+        </div>
+        <div class="text-white">
+          <span class="text-sm font-semibold">Lives</span>
+          <div class="flex items-center space-x-1" id="lives-container">
+            <div class="w-6 h-6 bg-red-500 rounded-full"></div>
+            <div class="w-6 h-6 bg-red-500 rounded-full"></div>
+            <div class="w-6 h-6 bg-red-500 rounded-full"></div>
+            <div class="w-6 h-6 bg-red-500 rounded-full"></div>
+            <div class="w-6 h-6 bg-red-500 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/game.ts"></script>
+  </body>
+</html>
